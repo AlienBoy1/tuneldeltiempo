@@ -1,0 +1,15 @@
+[33m25119b6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Refactor: Rehacer sistema de notificaciones push de forma limpia y robusta
+[33mad0ee90[m Fix: Corregir referencias a 'platillos' y agregar credentials a todas las peticiones fetch - Cambiar todas las referencias de 'platillos' a 'productos' en comentarios y mensajes - Agregar credentials: 'include' a todas las peticiones fetch para autenticacion en Vercel - Esto deberia resolver los errores 401 en Vercel
+[33mb487c02[m Fix: Agregar import faltante de useSession en _app.js
+[33maa72826[m Fix: AppLoader mas rapido (1s timeout) y push notifications solo cuando usuario autenticado - Reducir timeout de AppLoader de 3s a 1s - Verificaciones mas rapidas (150-300ms en lugar de 500-2000ms) - checkAndRenewSubscriptions verifica autenticacion antes de suscribirse - Errores de autenticacion en push notifications se manejan silenciosamente - AppLoader z-index aumentado a 9999 para evitar conflictos
+[33m393b2ed[m Fix: Corregir AppLoader que bloqueaba la renderizacion - Reducir timeout a 3 segundos - Hacer verificaciones mas rapidas y no bloqueantes - Renderizar contenido principal siempre - AppLoader se muestra encima con z-index
+[33me749718[m Feat: Agregar pantalla de carga con animaciones de tunel - Mostrar estado de inicializacion de la app - Detectar y mostrar errores de forma clara - Mensajes informativos durante la carga
+[33m261b79b[m Fix: Corregir autenticacion y sesiones - Usar useSession correctamente en cliente - Mejorar obtencion de sesion en push notifications - Configurar NextAuth para Vercel correctamente - Agregar fallback para obtener sesion desde API
+[33m0d99d02[m Fix: Corregir autenticacion completa - Configurar axios para enviar cookies - Agregar animaciones de tunel del tiempo - Mejorar experiencia visual de la app
+[33m84dcac7[m Fix: Mejorar manejo de errores en registro y actualizar documentacion - Agregar logging detallado para diagnostico - Actualizar MONGODB_DB a timeTunnel en documentacion - Crear guia actualizada de variables de entorno para Vercel
+[33m576d1be[m Fix: Corregir autenticacion NextAuth para localhost y Vercel - Mejorar configuracion de cookies y sesiones - Agregar logging detallado - Auto-login despues de registro - Actualizar endpoints para usar middleware correcto
+[33m4aaec83[m Fix: Corregir ruta de importacion en debug.js para que compile correctamente
+[33m01d70fb[m Fix crítico: Corregir nombre de BD a timeTunnel y mejorar service worker
+[33m81d1d1b[m Fix: APIs devuelven arrays vacíos en caso de error para que la app cargue
+[33md3ea56b[m Fix crítico: Corregir endpoints dishes y categories con logging detallado
+[33m8801a0d[m Fix URGENTE: Reescritura completa del endpoint de registro con logging detallado
